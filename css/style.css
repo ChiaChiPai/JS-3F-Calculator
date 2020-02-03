@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("../font/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url("../font/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url("../font/Roboto-Thin.ttf");
+}
+
+p {
+  margin: 0;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.cal {
+  width: 350px;
+  height: 525px;
+  background-color: #062145;
+  border-radius: 20px;
+}
+
+.calArea {
+  background-color: #041936;
+  height: 109px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  font-family: 'Roboto-Regular';
+  text-align: right;
+}
+
+.calArea .calContent {
+  font-size: 16px;
+  height: 18.667px;
+  color: #00C4FF;
+  line-height: 19px;
+  padding: 0 1.25rem;
+  padding-top: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 318px;
+}
+
+.calArea .calResult {
+  font-size: 56px;
+  color: #ffffff;
+  line-height: 66px;
+  padding: 0 1rem;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 318px;
+}
+
+.board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.board p {
+  width: 4.5rem;
+  height: 4rem;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto-Regular';
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.board p:hover {
+  background-color: #133e7a;
+}
+
+.board p:active {
+  background-color: #0c2b57;
+}
+
+.board .sign {
+  background-color: #041936;
+  font-family: 'Roboto-Thin';
+}
+
+.board .sideFuc {
+  color: #00C4FF;
+  font-family: 'Roboto-Medium';
+}
+
+.board .amount {
+  width: 155px;
+  background: transparent -webkit-gradient(linear, left top, right top, from(#00C4FF), to(#6C00FF)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #00C4FF 0%, #6C00FF 100%) 0% 0% no-repeat padding-box;
+  font-family: 'Roboto-Medium';
+}
+
+.board .amount:hover {
+  background: #137a7a;
+}
+
+.board .amount:active {
+  background: #106464;
+}
+/*# sourceMappingURL=style.css.map */

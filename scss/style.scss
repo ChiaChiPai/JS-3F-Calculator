@@ -1,0 +1,109 @@
+@font-face{
+    font-family: 'Roboto-Regular';
+    src: url('../font/Roboto-Regular.ttf')
+}
+
+@font-face{
+    font-family: 'Roboto-Medium';
+    src: url('../font/Roboto-Medium.ttf')
+}
+
+@font-face{
+    font-family: 'Roboto-Thin';
+    src: url('../font/Roboto-Thin.ttf')
+}
+
+p{
+    margin: 0;
+}
+
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cal{
+    width: 350px;
+    height: 525px;
+    background-color: #062145;
+    border-radius: 20px;
+}
+
+.calArea{
+    background-color: #041936;
+    height: 109px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Roboto-Regular';
+    text-align: right;
+    .calContent{
+        font-size: 16px;
+        height: 18.667px;
+        color: #00C4FF;
+        line-height: 19px;
+        padding: 0 1.25rem;
+        padding-top: 1rem;
+        overflow : hidden;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        max-width: 318px;
+    }
+    .calResult{
+        font-size: 56px;
+        color: #ffffff;
+        line-height:66px;
+        padding: 0 1rem;
+        display : inline-block;
+        overflow : hidden;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        max-width: 318px;
+    }
+}
+
+.board{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding:0 0.5rem;
+    p{
+        width: 4.5rem;
+        height: 4rem;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto-Regular';
+        border-radius: 16px;
+        cursor: pointer;
+        &:hover{
+            background-color:#133e7a;
+        }
+        &:active{
+            background-color:#0c2b57;
+        }
+    }
+    .sign{
+        background-color: #041936;
+        font-family: 'Roboto-Thin';
+    }
+    .sideFuc{
+        color: #00C4FF;
+        font-family: 'Roboto-Medium';
+    }
+    .amount{
+        width: 155px;
+        background: transparent linear-gradient(90deg, #00C4FF 0%, #6C00FF 100%) 0% 0% no-repeat padding-box;
+        font-family: 'Roboto-Medium';
+        &:hover{
+            background:#137a7a;
+        }
+        &:active{
+            background: darken($color: #137a7a, $amount: 5%);
+        }
+    }
+}
