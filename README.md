@@ -68,7 +68,7 @@ calResultStr = calResultStr.substring(0,calResultStr.length-1);
 break;
 ```
 
-#### 5. AC : 清除的功能
+### 5. AC : 清除的功能
 
 ```js
 case buffer == 'AC': //如果值是AC就把上下排的值都清掉
@@ -88,7 +88,7 @@ calResultStr += buffer;
 break;
 ```
 ## 二、使用者體驗
-### 1.在按下等號得到答案後，如何進行之後的運算?
+### 1. 在按下等號得到答案後，如何進行之後的運算?
 
 - 按下數字時，清除全部，開始另一個新的運算。
 - 按下加減乘除時，保留上排數值，繼續做運算。
@@ -170,7 +170,7 @@ while (numBeforeDot.length > 3) {
 ```
 
 ## 三、這個關卡學到的技能整理
-### 1.switch內case擺放的位置
+### 1. switch內case擺放的位置
 
 這個關卡只使用到一個function，所有的運算都寫在裡面了，但function中為了不影響網站效率，使用switch，使用switch時，放置case的前後順序就很重要了，因為只要有一個case符合條件，跑完條件下的內容就會跳出了，如果有要先判斷的就要擺在前面。
 ### 2. 小數點運算時，浮點數的問題
