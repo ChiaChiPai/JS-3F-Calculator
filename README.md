@@ -5,7 +5,7 @@
 
 在做這個作業前，可以先把計算機上的按鈕做分類，哪些按鈕按下是要幹嘛的，另外就是一些使用上的順序，方不方便，我是開啟windows的計算機看他是怎麼設計的。
 ## 一、分類
-數字 : 0不能出現在小數點前重複出現，不然會出現，像000.1
+### 1. 數字 : 0不能出現在小數點前重複出現，不然會出現，像000.1
 ```js
 case calResultStr == '' && buffer == '00' || calResultStr == '0' && buffer == '00': 
 //如果下排為空且輸入的數值是00或下排為0且輸入的數值是00，那下排只能出現0
@@ -179,7 +179,7 @@ parseFloat(number.toFixed(10))
 number.toFixed(10)這邊是把數值四捨五入取到小數點後第10位，然後用parseFloat把小數點後0多的值去掉。
 還有另一個更精準的方法: number-precision
 ### 3. 字串與字串方法
-#### length
+- length
 
 取得字串長度
 ```js
@@ -188,7 +188,7 @@ console.log(str.length);
 //result: 6
 ```
 
-#### indexOf( searchElement, fromIndex)
+- indexOf( searchElement, fromIndex)
 
 由'前'往後搜尋字串
 searchElement : 搜尋的字串
@@ -199,7 +199,7 @@ var demo = 'abc123abc';
 console.log(demo.indexOf('abc'));
 // 0
 ```
-#### lastIndexOf( searchElement, fromIndex)
+- lastIndexOf( searchElement, fromIndex)
 
 由'後'往前搜尋字串
 searchElement : 搜尋的字串
@@ -215,7 +215,7 @@ console.log(demo.lastIndexOf('abc',7));
 // result: 6
 ```
 
-#### search(Str)
+- search(Str)
 
 尋找字串， 無相符字串則傳回-1
 Str : 尋找的字串
@@ -229,7 +229,7 @@ console.log(str.search("123"));
 // result -1
 ```
 
-#### match(Str)
+- match(Str)
 
 查找符合的字串，並回傳字串內容， 無相符字串則傳回null
 Str : 尋找的字串
@@ -249,7 +249,7 @@ console.log(str.match('123'));
  // result: -1
  ```
  
-#### charAt(index)
+- charAt(index)
 
 傳回字串內的某個字元
 ```js
@@ -258,7 +258,7 @@ console.log(str.charAt(2));
 //2
 ```
 
-#### fromCharCode()
+- fromCharCode()
 
 傳回由UTF-16代表的字元
 ```js
@@ -266,7 +266,7 @@ console.log(String.fromCharCode(65,66,67));
 //result: ABC
 ```
 
-#### substring( indexStart, indexEnd)
+- substring( indexStart, indexEnd)
 
 indexStart: 開始位置
 endStart: 結束位置，實際則取到結束位置的前一個字元
@@ -283,7 +283,7 @@ console.log(str.substr(2,5));
 // result: 23456
 ```
 
-#### slice( start , end )
+- slice( start , end )
 
 start : 從0開始的索引值
 end : 結束值，實際取的是結束的前一個值
@@ -298,7 +298,7 @@ var str3 = str.slice(-3);
 // str3 ['c', 'd', 'e'];
 ```
 
-#### replace(searchStr, replaceStr)
+- replace(searchStr, replaceStr)
 
 searchStr : 字串中要被取代掉的字串
 replaceStr : 替換的字串
@@ -309,7 +309,7 @@ console.log(str.replace('hello','goodbye'));
 //result: "goodbye world";
 ```
 
-#### concat(stringA,stringB,…,stringX)
+- concat(stringA,stringB,…,stringX)
 
 組合字串
 ```js
@@ -319,7 +319,7 @@ console.log(strA.concat(strB));
 // result: test String
 ```
 
-#### split( )
+- split( )
 
 將字串轉換為陣列
 ```js
@@ -329,8 +329,8 @@ console.log(strArray[0]);
 //result: H
 ```
 
-#### toUpperCase() 
-#### toLowerCase()
+- toUpperCase() 
+- toLowerCase()
 
 變更字串大小寫
 ```js
