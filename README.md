@@ -1,5 +1,8 @@
 # JS地下城 3F 計算機
 ## UI設計稿
+
+![Ima](https://cdn-images-1.medium.com/max/1200/1*L_ru2LcfKa4GYrnNWEGL2g.png)
+
 在做這個作業前，可以先把計算機上的按鈕做分類，哪些按鈕按下是要幹嘛的，另外就是一些使用上的順序，方不方便，我是開啟windows的計算機看他是怎麼設計的。
 ## 一、分類
 數字 : 0不能出現在小數點前重複出現，不然會出現，像000.1
@@ -52,19 +55,28 @@ calResultContent = calResultContent.replace(/÷/ig, "/");
 calResultContent = calResultContent.substring(0,calResultContent.length-1); //進行eval計算前記得把'='拿掉
 calResultStr = parseFloat(eval(calResultContent).toFixed(10));//因為JS運算是依循IEEE754的規範，在運算時會轉換成2進制，而浮點數在轉成二進制時會造成無窮迴圈，進而產生運算誤差，JS有對此有.toFixed語法來處理浮點數問題
 break;//完成這個case後，跳出這個switch
-4. ⌫ : 刪除單一字元
+```
+
+### 4. ⌫ : 刪除單一字元
+
+```js
 case buffer == '⌫'://如果值是⌫就把上排的值清掉，然後把下排的值退格一個字元
 calContentStr = '';
 calResultStr = calResultStr.toString();
 //因為calResultStr經過eval計算出來是'number'，而下方的substring運用必須為'string'
 calResultStr = calResultStr.substring(0,calResultStr.length-1);
 break;
-5. AC : 清除的功能
+```
+
+#### 5. AC : 清除的功能
+
+```js
 case buffer == 'AC': //如果值是AC就把上下排的值都清掉
 calContentStr = '';
 calResultStr = '';
 break;
 ```
+
 ### 6. 點. : 點在一個數值中不能重複出現，不然0.22.33+33=這樣運算會出問題
 ```js
 case calResultStr.indexOf('.') != -1: //如果calResultStr字串內有.
@@ -76,10 +88,10 @@ calResultStr += buffer;
 break;
 ```
 ## 二、使用者體驗
-在按下等號得到答案後，如何進行之後的運算?
+### 1.在按下等號得到答案後，如何進行之後的運算?
 
-按下數字時，清除全部，開始另一個新的運算。
-按下加減乘除時，保留上排數值，繼續做運算。
+- 按下數字時，清除全部，開始另一個新的運算。
+- 按下加減乘除時，保留上排數值，繼續做運算。
 
 ```js
 case calContentStr.charAt(calContentStr.length-1) == '=': //判斷等號'='後面接什麼動作，會觸發什麼情況
