@@ -3,27 +3,27 @@
 
 ![Ima](https://cdn-images-1.medium.com/max/1200/1*L_ru2LcfKa4GYrnNWEGL2g.png)
 
-在做這個作業前，可以先把計算機上的按鈕做分類，哪些按鈕按下是要幹嘛的，另外就是一些使用上的順序，方不方便，我是開啟windows的計算機看他是怎麼設計的。
+在做這個作業前，可以先把計算機上的按鈕做分類，哪些按鈕按下是要幹嘛的，另外就是一些使用上的順序，方不方便，我是開啟 windows 的計算機看他是怎麼設計的。
 ## 一、分類
-### 1. 數字 : 0不能出現在小數點前重複出現，不然會出現，像000.1
+### 1. 數字 : 0 不能出現在小數點前重複出現，不然會出現，像 000.1
 ```js
 case calResultStr == '' && buffer == '00' || calResultStr == '0' && buffer == '00': 
-//如果下排為空且輸入的數值是00或下排為0且輸入的數值是00，那下排只能出現0
+//如果下排為空且輸入的數值是 00 或下排為 0 且輸入的數值是 00，那下排只能出現 0
 calResultStr = '0';
 break;
 case calResultStr.indexOf('0') == 0 && isNaN(parseInt(buffer)+1) == false:
-//如果下排0在第一個位置且後面輸入的數值為數字，就用後面輸入的數字取代0
+//如果下排 0 在第一個位置且後面輸入的數值為數字，就用後面輸入的數字取代 0
 calResultStr = buffer;
 break;
 ```
 ### 2. 運算符號+ − ×÷ : 運算符號，不得重複，像:1×÷2=
 isNaN(parseInt(calContentStr.charAt(calContentStr.length-1))+1)
 
-使用charAt去找calContentStr字串的最後一個字元，將這個字元轉換成數字後再+1，判斷它是不是NaN。如果是NaN代表他不是數字不能做算數。
+使用 charAt 去找 calContentStr 字串的最後一個字元，將這個字元轉換成數字後再 +1，判斷它是不是 NaN。如果是 NaN 代表他不是數字不能做算數。
 calContentStr.substring(0,calContentStr.length-1)
 
-將calContentStr字串的最後一個字元刪除。
-case buffer == '+': //在按下按鈕得到的值是+-x÷的情況下
+將 calContentStr 字串的最後一個字元刪除。
+case buffer == '+': //在按下按鈕得到的值是 +-x÷ 的情況下
 case buffer == '-':
 case buffer == '×':
 case buffer == '÷':
@@ -53,8 +53,8 @@ calContentStr += buffer; //讓運算列加入'='，方便之後判斷用
 let calResultContent = calContentStr.replace(/×/ig, "*"); //將this取到的x÷替換成可以運算的符號
 calResultContent = calResultContent.replace(/÷/ig, "/");
 calResultContent = calResultContent.substring(0,calResultContent.length-1); //進行eval計算前記得把'='拿掉
-calResultStr = parseFloat(eval(calResultContent).toFixed(10));//因為JS運算是依循IEEE754的規範，在運算時會轉換成2進制，而浮點數在轉成二進制時會造成無窮迴圈，進而產生運算誤差，JS有對此有.toFixed語法來處理浮點數問題
-break;//完成這個case後，跳出這個switch
+calResultStr = parseFloat(eval(calResultContent).toFixed(10));//因為 JS 運算是依循 IEEE754 的規範，在運算時會轉換成 2 進制，而浮點數在轉成二進制時會造成無窮迴圈，進而產生運算誤差，JS 有對此有.toFixed語法來處理浮點數問題
+break;//完成這個 case 後，跳出這個 switch
 ```
 
 ### 4. ⌫ : 刪除單一字元
@@ -77,7 +77,7 @@ calResultStr = '';
 break;
 ```
 
-### 6. 點. : 點在一個數值中不能重複出現，不然0.22.33+33=這樣運算會出問題
+### 6. 點. : 點在一個數值中不能重複出現，不然 0.22.33+33= 這樣運算會出問題
 ```js
 case calResultStr.indexOf('.') != -1: //如果calResultStr字串內有.
 if(buffer == '.'){
@@ -109,8 +109,8 @@ break;
 ```
 
 ### 2. 數字超過計算機大小時，使文字變小
-要注意計算字串長度時，因為計算機的答案是經過eval計算出來的，為'number'，因此要轉為字串我們才能統一計算字串長度大於多少時將字體大小轉換。
-一開始我把calResultStr和calContentStr放在同一個switch裡面，但這樣會發生他只執行上面的calResultStr完後就跳出了，calContentStr在下面會執行不到。所以要把兩個內容分開判斷。
+要注意計算字串長度時，因為計算機的答案是經過 eval 計算出來的，為 'number' ，因此要轉為字串我們才能統一計算字串長度大於多少時將字體大小轉換。
+一開始我把 calResultStr 和 calContentStr 放在同一個switch裡面，但這樣會發生他只執行上面的 calResultStr 完後就跳出了， calContentStr 在下面會執行不到。所以要把兩個內容分開判斷。
 
 ```js
 let resultCheck = function(){
@@ -140,7 +140,7 @@ case calContentStr.length <= 33:
 ```
 
 ### 3. 標示出千分位，提升閱讀體驗
-這個函式大量用到slice的語法來切分字串。
+這個函式大量用到 slice 的語法來切分字串。
 因為計算機會有小數點的問題，這邊設計小數點以下不標是千分位符號。
 因此這個函式分為兩個判斷，一個是有小數點的，一個是沒有小數點的。
 
@@ -192,7 +192,7 @@ console.log(str.length);
 
 由'前'往後搜尋字串
 searchElement : 搜尋的字串
-fromIndex : 搜尋範圍，預設為字串長度(str.length)-1，也就是全部範圍
+fromIndex : 搜尋範圍，預設為字串長度 (str.length)-1，也就是全部範圍
 
 ```js
 var demo = 'abc123abc';
@@ -203,7 +203,7 @@ console.log(demo.indexOf('abc'));
 
 由'後'往前搜尋字串
 searchElement : 搜尋的字串
-fromIndex : 搜尋範圍，預設為字串長度(str.length)-1，也就是全部範圍
+fromIndex : 搜尋範圍，預設為字串長度 (str.length)-1，也就是全部範圍
 
 ```js
 var demo = 'abc123abc';
@@ -217,7 +217,7 @@ console.log(demo.lastIndexOf('abc',7));
 
 - search(Str)
 
-尋找字串， 無相符字串則傳回-1
+尋找字串， 無相符字串則傳回 -1
 Str : 尋找的字串
 ```js
 var str="ABC and abc"
@@ -231,7 +231,7 @@ console.log(str.search("123"));
 
 - match(Str)
 
-查找符合的字串，並回傳字串內容， 無相符字串則傳回null
+查找符合的字串，並回傳字串內容， 無相符字串則傳回 null
 Str : 尋找的字串
 
 ```js
@@ -285,7 +285,7 @@ console.log(str.substr(2,5));
 
 - slice( start , end )
 
-start : 從0開始的索引值
+start : 從 0 開始的索引值
 end : 結束值，實際取的是結束的前一個值
 ```js
 var str = ['a', 'b', 'c', 'd', 'e'];
