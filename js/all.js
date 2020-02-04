@@ -103,7 +103,8 @@ let tap = function(){
             let calResultContent = calContentStr.replace(/×/ig, "*"); //將this取到的x÷替換成可以運算的符號
             calResultContent = calResultContent.replace(/÷/ig, "/");
             calResultContent = calResultContent.substring(0,calResultContent.length-1); //進行eval計算前記得把'='拿掉
-            calResultStr = parseFloat(eval(calResultContent).toFixed(10));//因為JS運算是依循IEEE754的規範，在運算時會轉換成2進制，而浮點數在轉成二進制時會造成無窮迴圈，進而產生運算誤差，JS有對此有.toFixed語法來處理浮點數問題
+            // calResultStr = parseFloat(eval(calResultContent).toFixed(10));//因為JS運算是依循IEEE754的規範，在運算時會轉換成2進制，而浮點數在轉成二進制時會造成無窮迴圈，進而產生運算誤差，JS有對此有.toFixed語法來處理浮點數問題
+            calResultStr = NP.strip(eval(calResultContent)); //使用number-precision
             break;
         case calResultStr == '' && buffer == '.': //如果在什麼都沒有的情況下輸入.,就會變成0.
             calResultStr = '0.';
