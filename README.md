@@ -177,7 +177,24 @@ while (numBeforeDot.length > 3) {
 因為JS運算是依循IEEE754的規範，在運算時會轉換成2進制，而浮點數在轉成二進制時會造成無窮迴圈，進而產生運算誤差，JS有對此有.toFixed語法來處理浮點數問題。
 parseFloat(number.toFixed(10))
 number.toFixed(10)這邊是把數值四捨五入取到小數點後第10位，然後用parseFloat把小數點後0多的值去掉。
-還有另一個更精準的方法: number-precision
+
+- 還有另一個更精準的方法: number-precision
+
+開啟命令提示字元，路徑切換到要使用 number-precision 的資料夾下，輸入
+```
+npm install number-precision --save
+```
+在 Html 的網頁導入，number-precision JS 語法
+```javascript
+<script src="node_modules/number-precision/build/index.umd.js"></script> //放在all.js前面才讀取的到
+<script src="js/all.js"></script> //all.js是我主要撰寫的檔案
+```
+就可以使用 number-precision 功能了
+```javascript
+console.log(NP.strip(0.100000000000009));
+//result: 0.1
+```
+
 ### 3. 字串與字串方法
 - length
 
